@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Intent
 import android.util.Log
 import androidx.annotation.NonNull
+import android.text.TextUtils
 import com.moxtra.mepsdk.FeatureConfig
 import com.moxtra.mepsdk.MEPClient
 import com.moxtra.sdk.common.ApiCallback
@@ -17,7 +18,6 @@ import org.json.JSONObject
 
 import org.json.JSONArray
 import com.moxtra.mepsdk.data.MEPStartMeetOptions
-import ext.org.apache.commons.lang3.StringUtils
 import org.json.JSONException
 
 
@@ -297,7 +297,7 @@ class FlutterPluginMepPlugin : FlutterPlugin, MethodCallHandler {
                 topic = parameters.get(0) as String?
             }
 
-            if (StringUtils.isEmpty(topic) || StringUtils.equals(topic, "null")) {
+            if (TextUtils.isEmpty(topic) || TextUtils.equals(topic, "null")) {
                 result.error("-1", "Topic is empty!", "")
                 return;
             }
@@ -308,7 +308,7 @@ class FlutterPluginMepPlugin : FlutterPlugin, MethodCallHandler {
             )
             val startMeetOptions = MEPStartMeetOptions()
             startMeetOptions.topic = topic!!
-            if (!StringUtils.isEmpty(chatId) && !StringUtils.equals(chatId, "null")) {
+            if (!TextUtils.isEmpty(chatId) && !TextUtils.equals(chatId, "null")) {
                 startMeetOptions.chatID = chatId
             }
             if (uniqueIds != null) {

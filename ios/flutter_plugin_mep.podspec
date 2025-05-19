@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_plugin_mep'
-  s.version          = '8.12.2'
+  s.version          = '9.11.4'
   s.summary          = 'flutter plugin for moxo sdk'
   s.description      = <<-DESC
   flutter plugin for moxo sdk
@@ -17,11 +17,9 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Classes/*.h'
   s.swift_version = '5.0'
   s.dependency 'Flutter'
-  s.dependency 'MEPSDK', '~> 8.18.2'
+  s.dependency 'MEPSDKDylib', '~> 9.11.4'
   s.static_framework = true
   s.platform = :ios, '13.0'
   s.libraries = "c++", "xml2.2","z"
-  # Flutter.framework does not contain a i386 slice.
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'OTHER_LDFLAGS' => '-ObjC' }
 end
