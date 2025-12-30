@@ -64,34 +64,6 @@ dependencies:
     Click Get Packages located in right side of the action ribbon at the top of pubspec.yaml.
 ```
 
-3. iOS Specific Steps
-
-* Add moxo cocoapod repo as source into Podfile under ``./ios/Podfile``:
-
-```
-source 'https://maven.moxtra.com/repo/moxtra-specs.git'
-```
-
-* Change pod deployment platform to iOS 13+
-
-Sample:
-
-```ruby
-platform :ios, '13.0'
-# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
-ENV['COCOAPODS_DISABLE_STATS'] = 'true'
-
-source 'https://maven.moxtra.com/repo/moxtra-specs.git'
-
-project 'Runner', {
-  'Debug' => :debug,
-  'Profile' => :release,
-  'Release' => :release,
-}
-
-# rest of the file...
-```
-
 ## Initialization
 
 ### Login
